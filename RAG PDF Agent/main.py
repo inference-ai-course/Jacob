@@ -1,6 +1,6 @@
 import argparse
 from ingest import ingest_documents
-from query import query_documents
+from response import query_documents
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Resume/Transcript RAG CLI Tool")

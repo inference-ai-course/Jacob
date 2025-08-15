@@ -1,27 +1,16 @@
-from dotenv import load_dotenv
-from rag import RAGClass
-import os
+import argparse
+from ingest import ingest_documents
+from query import query_documents
 
-load_dotenv()  # This will load variables from the .env file into the environment
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Resume/Transcript RAG CLI Tool")
+    parser.add_argument("--ingest", action="store_true", help="Ingest documents into ChromaDB")
+    parser.add_argument("--query", type=str, help="Ask a question about the documents")
+    args = parser.parse_args()
 
-# Now you can access the API key
-api_key = os.getenv("OPENAI_API_KEY")
-
-# Initialize the RAG class with the path to your data
-rag = RAGClass(data_path="my_text_file.txt")
-
-# Load and process documents
-rag.load_documents()
-rag.split_documents()
-rag.create_vectorstore()
-rag.setup_retriever()
-rag.setup_qa_chain()
-
-# Answer a sample query
-rag.answer_query("What is Retrieval-Augmented Generation?")
-
-# Evaluate the system with sample queries and ground truths
-sample_queries = ["Define RAG.", "Explain vector databases."]
-sample_ground_truths = ["Retrieval-Augmented Generation", "Vector databases store embeddings"]
-rag.evaluate(sample_queries, sample_ground_truths)
-
+    if args.ingest:
+        ingest_documents()
+    elif args.query:
+        query_documents(args.query)
+    else:
+        parser.print_help()

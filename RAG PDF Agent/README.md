@@ -26,3 +26,6 @@ Run these commands to query responses to the agent
 python main.py --ingest
 python main.py --response "your question"
 ```
+
+##Sample Usage
+![alt text](image.png)

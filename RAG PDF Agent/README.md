@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```
 
 ## Using the agent
-Run this command to initialize the database 
+Run these commands to query responses to the agent
 ```bash
 python main.py --ingest
 python main.py --response "your question"

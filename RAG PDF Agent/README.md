@@ -27,5 +27,5 @@ python main.py --ingest
 python main.py --response "your question"
 ```
 
-##Sample Usage
+## Sample Usage
 ![alt text](image.png)

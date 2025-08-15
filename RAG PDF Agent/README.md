@@ -19,3 +19,10 @@ source .venv/Scripts/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+## Using the agent
+Run this command to initialize the database 
+```bash
+python main.py --ingest
+python main.py --response "your question"
+```

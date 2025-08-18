@@ -3,28 +3,29 @@ This is a prototype RAG agent that aims to answer basic questions about a studen
 grades, coursework or other experiences.
 
 ## Setup
-1. Initialize your virtual environment 
+1. Initialize your virtual environment and activate it
 
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
 ```
 
-2. Once your virtual environment (.venv) is created, activate it
-```bash
-source .venv/Scripts/activate 
-```
-
-3. Install the pip packages
+2. Install the pip packages
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Using the agent
-Run these commands to query responses to the agent
+Run these commands to activate Ollama
+```bash
+ollama serve
+ollama pull llama3.2:1b
+```
+
+Query a response with these commands
 ```bash
 python main.py --ingest
-python main.py --response "your question"
+python main.py --query "your question"
 ```
 
 ## Sample Usage

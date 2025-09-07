@@ -1,6 +1,6 @@
 # Resume/Transcript RAG Agent
-This is a prototype RAG agent that aims to answer basic questions about a student's
-grades, coursework or other experiences.
+This is a prototype RAG agent that aims to answer questions about a student's
+grades, coursework, or other experiences.
 
 ## Setup
 1. Initialize your virtual environment and activate it
